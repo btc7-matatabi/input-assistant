@@ -1,0 +1,68 @@
+/* 全体のレイアウト */
+.input-container {
+    /*width: 100%;*/
+    height: 100vh;
+    position: relative;
+    background-image: url('../image/inputScreenImage.png'); /* 背景画像を指定 */
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+}
+
+
+.date-container{
+    background-color: white;
+    position:absolute;
+    top: 15vh;
+    left: 23vw;
+    display: flex;
+}
+
+.react-datepicker__input-container input {
+    width: 100px;
+    text-align: center;
+}
+.search-button{
+    position:absolute;
+    top: 22vh;
+    left: 55vw;
+    width: 100px;
+    background-color: blanchedalmond;
+    border: 1px solid black;
+    border-radius: 3px;
+    cursor: pointer;
+    font-weight: bold;
+}
+.decide-button{
+    position:absolute;
+    top: 55vh;
+    left: 55vw;
+    width: 120px;
+    background-color: blanchedalmond;
+    border: 1px solid black;
+    border-radius: 3px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+
+table {
+    position:absolute;
+    top: 60vh;
+    left: 23vw;
+    border-collapse: collapse;
+    border: 2px solid black;
+    padding: 1px;
+}
+
+th {
+    border: 1px dashed lightgray;
+    border-bottom: 1px solid black;
+    padding: 4px;
+    background: lavender;
+}
+
+td {
+    border: 1px dashed lightgray;
+    padding: 4px;
+}

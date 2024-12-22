@@ -1,0 +1,57 @@
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.app-container {
+  /*width: 100%;*/
+  height: 100vh;
+  position: relative;
+  background-image: url('../image/topScreenImage.png'); /* 背景画像を指定 */
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+}
+
+.button-section {
+  position: absolute;
+  top: 45vh;
+  left: 35vw;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 9999;
+  width: fit-content;
+}
+
+.input-button {
+  background-color:white;
+  color: blue;
+  border: 1px;
+  padding: 10px 20px;
+  font-size: 30px;
+  cursor: pointer;
+  border-radius: 4px;
+  display: inline-flex;
+  flex-direction: column; /* 縦に並べる */
+  justify-content: left;
+  /*align-items: center;*/
+  text-align: left; /* 文字を中央に配置 */
+  width: auto; /* 画像の幅に合わせて自動調整 */
+  transform: scale(0.6);
+}
+.input-button:hover {
+  border: 1px solid black;
+}
+
+.input-button img {
+  margin-top: 8px; /* 文字と画像の間に余白を追加 */
+  /*max-height: 30%; !* 画像の最大幅をボタン内に収める *!*/
+  width: auto;
+  height: auto;
+}
+
+.input-button:active {
+  transform: scale(0.5); /* クリック時にボタンを少し縮小 */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* 押し込むエフェクトを強調するためのシャドウ */
+}
