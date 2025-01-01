@@ -10,14 +10,14 @@ body {
   position: relative;
   background-image: url('../image/topScreenImage.png'); /* 背景画像を指定 */
   background-size: cover;
-  background-position: center;
+  background-position: top center;
   z-index: 1;
 }
 
 .button-section {
   position: absolute;
   top: 45vh;
-  left: 35vw;
+  left: 36vw;
   transform: translate(-50%, -50%);
   text-align: center;
   z-index: 9999;

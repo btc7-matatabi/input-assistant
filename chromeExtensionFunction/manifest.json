@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "Input-assistant Extension",
+  "description": "新時間管理への取込機能。",
+  "version": "1.0",
+  "permissions": [
+    "activeTab"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["http://localhost:5173/"],
+      "js": ["content.js"]
+    }
+  ]
+}

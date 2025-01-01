@@ -1,4 +1,6 @@
-import { Column, ColumnDef, SortDirection } from "@tanstack/react-table";
+//https://dev.classmethod.jp/articles/introduce-tanstack-table/
+
+import { ColumnDef } from "@tanstack/react-table";
 // import { format, parse } from "date-fns";
 // import { ja } from "date-fns/locale/ja";
 // import { JSX } from "react";
@@ -59,7 +61,8 @@ export const columns: ColumnDef<User>[] = [
   {
     accessorKey: "bundle",
     header: "一括",
-    cell: ({ row }) => <input type="checkbox" checked={row.original.bundle} />,
+    cell: ({ row }) => <input type="checkbox" checked={row.original.bundle}
+    />,
   },
   {
     accessorKey: "Individual",
