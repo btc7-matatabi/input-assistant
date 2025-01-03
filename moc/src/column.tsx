@@ -16,7 +16,7 @@ export type User = {
   Individual: boolean;
   employeeCode: string;
   name: string;
-  timeCode: string;
+  work_code: string;
   gateInTime: string;
   gateOutTime: string;
   startToWorkTime: string;
@@ -80,10 +80,10 @@ export const columns: ColumnDef<User>[] = [
     header: "氏名",
   },
   {
-    accessorKey: "timeCode",
+    accessorKey: "work_code",
     header: "時間管理コード",
     cell: ({ row }) => {
-      const currentValue = row.original.timeCode;
+      const currentValue = row.original.work_code;
       return (
         <select value={currentValue} style={{ width: "60px" }}>
           <option key={currentValue} value={currentValue}>

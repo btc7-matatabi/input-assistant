@@ -5,7 +5,7 @@ import { useAtom } from "jotai";
 import { orgCdAtom } from "./atoms.ts";
 
 export default function LoginPage() {
-  const [orgCd, setOrgCd] = useAtom(orgCdAtom);
+  const [, setOrgCd] = useAtom(orgCdAtom);
   const [userId, setUserId] = useState("");
   const [password, setPassword] = useState("");
   const [, setCompanyCode] = useState("");
@@ -26,23 +26,29 @@ export default function LoginPage() {
       //   credentials: "include",
       // });
       const apiUrl = `${URL}/loginUserInfo/${userId}`;
+      console.log("apiUrl",apiUrl)
       const response = await fetch(apiUrl);
       if (response.ok) {
         const Data = await response.json();
-        setOrgCd(Data.group_code);
-        navigate("/top"); // ログイン成功時にリダイレクト
+        console.log("Data.group_code", Data,Data[0].group_code);
+        if(Data[0].group_code){
+
+          setOrgCd(Data[0].group_code);
+          localStorage.setItem("orgCd", Data[0].group_code);
+          navigate("/top"); // ログイン成功時にリダイレクト
+        }
       } else {
         const errorData = await response.json();
         throw new Error(errorData.message || "エラーが発生しました");
       }
     } catch (error) {
-      // if (error instanceof Error) {
-      //   console.error("エラー:", error.message); // 安全にアクセス
-      // } else {
-      // console.error("未知のエラー:", error); // その他の型の場合
-      // }
-      navigate("/top");
-      setOrgCd("12345");
+      if (error instanceof Error) {
+        console.error("エラー:", error.message); // 安全にアクセス
+      } else {
+      console.error("未知のエラー:", error); // その他の型の場合
+      }
+      // navigate("/top");
+      // setOrgCd("12345");
     }
   };
 
@@ -71,6 +77,7 @@ export default function LoginPage() {
             <input
               type="text"
               value="01000"
+              id="companyCode"
               className="companyCode"
               onChange={(e) => setCompanyCode(e.target.value)}
             />

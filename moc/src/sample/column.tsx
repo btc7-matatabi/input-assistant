@@ -1,4 +1,4 @@
-import { Column, ColumnDef, SortDirection } from "@tanstack/react-table";
+import {  ColumnDef} from "@tanstack/react-table";
 // import { format, parse } from "date-fns";
 // import { ja } from "date-fns/locale/ja";
 // import { JSX } from "react";
@@ -79,7 +79,7 @@ export const columns: ColumnDef<User>[] = [
     },
     filterFn: (row, _, filterValue) => {
       const { from, to } = filterValue as { from?: string; to?: string };
-      const createdAt = row?.original?.createdAt;
+      // const createdAt = row?.original?.createdAt;
 
       // return (
       //   (!from ||

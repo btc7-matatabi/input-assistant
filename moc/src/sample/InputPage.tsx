@@ -8,7 +8,7 @@ import {
   getSortedRowModel,
   useReactTable,
 } from "@tanstack/react-table";
-import { FC, useEffect, useState } from "react";
+import {  useEffect, useState } from "react";
 
 import { columns, User } from "./column.tsx";
 import { getData } from "./data.ts";
