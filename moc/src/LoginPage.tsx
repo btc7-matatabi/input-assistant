@@ -19,12 +19,6 @@ export default function LoginPage() {
     //get   /loginUserInfo/:id
     try {
       setErrorMessage(""); // エラーメッセージをリセット
-      // const response = await fetch(`${server_url}/login`, {
-      //   method: "POST",
-      //   headers: { "Content-Type": "application/json" },
-      //   body: JSON.stringify({ userId, password }),
-      //   credentials: "include",
-      // });
       const apiUrl = `${URL}/loginUserInfo/${userId}`;
       console.log("apiUrl",apiUrl)
       const response = await fetch(apiUrl);
@@ -47,8 +41,6 @@ export default function LoginPage() {
       } else {
       console.error("未知のエラー:", error); // その他の型の場合
       }
-      // navigate("/top");
-      // setOrgCd("12345");
     }
   };
 
@@ -76,7 +68,7 @@ export default function LoginPage() {
             <span>@</span>
             <input
               type="text"
-              value="01000"
+              value="10101"
               id="companyCode"
               className="companyCode"
               onChange={(e) => setCompanyCode(e.target.value)}
