@@ -1,6 +1,6 @@
 // import React from "react";
 import "./TopPage.css";
-import topIcon from "../image/topIcon.png";
+import topIcon from "./topIcon.png";
 import { useNavigate } from "react-router-dom";
 
 export function TopPage() {
