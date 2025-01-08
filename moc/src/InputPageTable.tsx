@@ -149,8 +149,8 @@ export function InputPateTable({
                                     <option key={0} value="">
                                     </option>
                                     {[...Array(24)].map((_, i) => (
-                                        <option key={i} value={i}>
-                                            {i}
+                                        <option key={i} value={String(i).padStart(2, '0')}>
+                                            {String(i).padStart(2, '0')}
                                         </option>
                                     ))}
                                 </select>
@@ -169,8 +169,8 @@ export function InputPateTable({
                                     <option key={0} value="">
                                     </option>
                                     {[...Array(60)].map((_, i) => (
-                                        <option key={i} value={i}>
-                                            {i}
+                                        <option key={i} value={String(i).padStart(2, '0')}>
+                                            {String(i).padStart(2, '0')}
                                         </option>
                                     ))}
                                 </select>
