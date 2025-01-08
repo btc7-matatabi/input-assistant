@@ -86,41 +86,43 @@ export function InputPage() {
     handleSearch(orgCd)},[])
 
   return (
-    <div className="input-container">
-      <div className="date-container">
-        <label htmlFor="inputDate">＊対象年月日</label>
-        <DatePicker
-          id="inputDate"
-          dateFormat="yyyy/MM/dd"
-          selected={targetDate || null}
-          onChange={(selectedDate: Date | null) => {
-            if (selectedDate) {
-              setTargetDate(selectedDate);
-              localStorage.setItem("targetDate",selectedDate.toString())
-            }
-          }}
-        ></DatePicker>
-        {/*<input type="date" disabled value={new Date().toLocaleDateString()} />*/}
-      </div>
-      <div className="org-container">
-        <span >組織コード: </span>
-        <input type="text" id="orgInput" value={orgCd||''} ></input>
-      </div>
-      <button className="search-button" onClick={() => handleSearch(orgCd||'')}>
-        検索
-      </button>
-      <button className="decide-button" onClick={() => handleDecide()}>
-      {/*<button className="decide-button">*/}
-        勤怠確定
-      </button>
-      <main>
-        <InputPateTable
-            key={data.length}// key を使って再マウント
-            data={data}
-            handleCheckboxChange={handleCheckboxChange}
-            handleWork_codeChange={handleWork_codeChange}
-        />
-      </main>
-    </div>
-  );
-}
+      <div className="input-container">
+        <div className="date-container">
+          <label htmlFor="inputDate">＊対象年月日</label>
+          <DatePicker
+              id="inputDate"
+              dateFormat="yyyy/MM/dd"
+              selected={targetDate || null}
+              onChange={(selectedDate: Date | null) => {
+                if (selectedDate) {
+                  setTargetDate(selectedDate);
+                  localStorage.setItem("targetDate", selectedDate.toString())
+                }
+              }}
+          ></DatePicker>
+          {/*<input type="date" disabled value={new Date().toLocaleDateString()} />*/}
+        </div>
+        <div className="org-container">
+          <span>組織コード: </span>
+          <input type="text" id="orgInput" value={orgCd || ''}></input>
+        </div>
+        <button className="search-button" onClick={() => handleSearch(orgCd || '')}>
+          検索
+        </button>
+        <div className="insertButton-container">
+        </div>
+          <button className="decide-button" onClick={() => handleDecide()}>
+            {/*<button className="decide-button">*/}
+            勤怠確定
+          </button>
+          <main>
+            <InputPateTable
+                key={data.length}// key を使って再マウント
+                data={data}
+                handleCheckboxChange={handleCheckboxChange}
+                handleWork_codeChange={handleWork_codeChange}
+            />
+          </main>
+        </div>
+        );
+        }

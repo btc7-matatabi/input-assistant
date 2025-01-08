@@ -20,6 +20,15 @@
     align-items: center;
     gap: 15px;
 }
+.insertButton-container{
+    /*background-color: #83d3dd;*/
+    position:absolute;
+    top: 37vh;
+    left: 70vw;
+    width:300px;
+    height: 50px;
+    z-index: 1;
+}
 
 .react-datepicker__input-container input {
     width: 120px;
