@@ -19,18 +19,20 @@ export function InputPateTable({
                 <tr>
                     <th style={{width: "4%"}}>一括</th>
                     <th style={{width: "4%"}}>個別</th>
-                    <th style={{width: "10%"}}>従業員コード</th>
-                    <th style={{width: "12%"}}>氏名</th>
-                    <th style={{width: "8%"}}>時間管理コード</th>
-                    <th style={{width: "6%"}}>入場時刻</th>
-                    <th style={{width: "6%"}}>退場時刻</th>
-                    <th style={{width: "6%"}}>始業時刻</th>
-                    <th style={{width: "6%"}}>終業時刻</th>
+                    <th style={{width: "8%"}}>従業員コード</th>
+                    <th style={{width: "10%"}}>氏名</th>
+                    <th style={{width: "6%"}}>時間管理コード</th>
+                    <th style={{width: "6%"}}>休務内容</th>
+                    <th style={{width: "5%"}}>入場時刻</th>
+                    <th style={{width: "5%"}}>退場時刻</th>
+                    <th style={{width: "5%"}}>始業時刻</th>
+                    <th style={{width: "5%"}}>終業時刻</th>
                     <th style={{width: "6%"}}>開始時刻(時)</th>
                     <th style={{width: "6%"}}>開始時刻(分)</th>
                     <th style={{width: "4%"}}>残業前小休憩</th>
                     <th style={{width: "6%"}}>終了時刻(時)</th>
                     <th style={{width: "6%"}}>終了時刻(分)</th>
+                    <th style={{width: "4%"}}>超勤</th>
                     <th style={{width: "4%"}}>後始末</th>
                 </tr>
                 </thead>
@@ -84,14 +86,15 @@ export function InputPateTable({
                                 row.work_code
                             )}
                         </td>
+                        <td>{row.holiday}</td>
                         <td>{row.gateInTime}</td>
                         <td>{row.gateOutTime}</td>
-                        <td>{row.startToWorkTime}</td>
-                        <td>{row.endToWorkTime}</td>
+                        <td>{row.start_to_work_time}</td>
+                        <td>{row.end_to_work_time}</td>
                         <td>
                             {row.Individual ? (
                                 <select
-                                    value={row.startHour ?? ""}
+                                    value={row.start_hour ?? ""}
                                     onChange={(e) =>
                                         handleWork_codeChange(index, e.target.value)
                                     }
@@ -105,13 +108,13 @@ export function InputPateTable({
                                     ))}
                                 </select>
                             ) : (
-                                row.startHour
+                                row.start_hour
                             )}
                         </td>
                         <td>
                             {row.Individual ? (
                                 <select
-                                    value={row.startMinute ?? ""}
+                                    value={row.start_minute ?? ""}
                                     onChange={(e) =>
                                         handleWork_codeChange(index, e.target.value)
                                     }
@@ -125,7 +128,7 @@ export function InputPateTable({
                                     ))}
                                 </select>
                             ) : (
-                                row.startMinute
+                                row.start_minute
                             )}
                         </td>
                         <td>
@@ -141,7 +144,7 @@ export function InputPateTable({
                         <td>
                             {row.Individual ? (
                                 <select
-                                    value={row.endHour ?? ""}
+                                    value={row.end_hour ?? ""}
                                     onChange={(e) =>
                                         handleWork_codeChange(index, e.target.value)
                                     }
@@ -155,13 +158,13 @@ export function InputPateTable({
                                     ))}
                                 </select>
                             ) : (
-                                row.endHour
+                                row.end_hour
                             )}
                         </td>
                         <td>
                             {row.Individual ? (
                                 <select
-                                    value={row.endMinute ?? ""}
+                                    value={row.end_minute ?? ""}
                                     onChange={(e) =>
                                         handleWork_codeChange(index, e.target.value)
                                     }
@@ -175,9 +178,10 @@ export function InputPateTable({
                                     ))}
                                 </select>
                             ) : (
-                                row.endMinute
+                                row.end_minute
                             )}
                         </td>
+                        <td>{row.overtime_minute}</td>
                         <td>
                             {" "}
                             {row.Individual ? (
