@@ -4,7 +4,7 @@ import DatePicker from "react-datepicker";
 import "./InputPage.css";
 import { StaticData } from "./atoms.ts";
 import { format } from "date-fns";
-import {InputPateTable} from "./InputPageTable.tsx";
+import {InputPageTable} from "./InputPageTable.tsx";
 
 
 export function InputPage() {
@@ -83,7 +83,8 @@ export function InputPage() {
     } else {
       setTargetDate(new Date()); // 初期値を設定
     }
-    handleSearch(orgCd)},[])
+    handleSearch(orgCd)
+  },[])
 
   return (
       <div className="input-container">
@@ -116,7 +117,7 @@ export function InputPage() {
             勤怠確定
           </button>
           <main>
-            <InputPateTable
+            <InputPageTable
                 key={data.length}// key を使って再マウント
                 data={data}
                 handleCheckboxChange={handleCheckboxChange}

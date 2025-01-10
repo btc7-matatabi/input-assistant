@@ -1,16 +1,16 @@
 import { StaticData } from "./atoms.ts";
 
-interface InputPateTableProps {
+interface InputPageTableProps {
     data: StaticData[];
     handleCheckboxChange: (index: number, field: keyof StaticData) => void;
     handleWork_codeChange: (index: number, newWork_code: string) => void;
 }
 
-export function InputPateTable({
+export function InputPageTable({
                                    data,
                                    handleCheckboxChange,
                                    handleWork_codeChange,
-                               }: InputPateTableProps) {
+                               }: InputPageTableProps) {
 
     return(
         <>
